@@ -7,10 +7,19 @@ class IncomingController < ApplicationController
     @user = User.find_by(email: params[:sender])
     @topic = Topic.find_by(title: params[:subject])
     @url = params["body-plain"]
-    if @user.present?
-      @topic = @user.topics.find_or_create_by(title: params[:subject])
-      @bookmark = @topic.bookmarks.create(url: @url)
+    
+    if @user.nil?
+      @user = User.new(email: params[:sender], password: "temp0rary_passw0rd")
+      @user.skip_confirmation!
+      @user.save!
     end
+
+    if @topic.nil?
+      @topic = @user.topics.create(title: params[:subject])
+    end
+      
+    @bookmark = @topic.bookmarks.create(url: @url)
+    
     head 200
   end
 end
