@@ -1,5 +1,5 @@
 <h1><%= @topic.title %></h1>
-
+<%= link_to "Add Bookmark", bookmark_path(@bookmarks), class: 'btn btn-default' %>
 <%= link_to "Edit", edit_topic_path(@topic), class: 'btn btn-success' %>
 <%= link_to "Delete Topic", @topic, method: :delete, class: 'btn btn-danger' %>
 
