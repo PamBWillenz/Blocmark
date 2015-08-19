@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
-  devise_for :users
-  get 'welcome/index'
+  
+  resources :topics
 
-  get 'welcome/about'
+  devise_for :users
+  
+  get 'about' => 'welcome#about'
 
   root to: 'welcome#index'
-    post :incoming, to: 'incoming#create'
+  post :incoming, to: 'incoming#create'
 end
