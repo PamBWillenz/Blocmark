@@ -10,7 +10,8 @@
       <div class="media">
         <div class="media-body">
           <h2 class="media-heading">
-            <%= link_to bookmark.url %>
+            <%= link_to bookmark.url, bookmark.url, :target => '_blank' %>
+            <%#= link_to "Delete Bookmark", [@topic, bookmark.url], method: :delete, class: 'btn btn-danger' %>
           </h2>
         </div>
       </div>
