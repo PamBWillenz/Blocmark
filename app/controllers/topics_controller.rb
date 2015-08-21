@@ -6,6 +6,7 @@ class TopicsController < ApplicationController
   def show
     @topic = Topic.find(params[:id])
     @bookmarks = @topic.bookmarks
+    @bookmark = @bookmarks.new
   end
 
   def new
@@ -40,6 +41,7 @@ class TopicsController < ApplicationController
 
   def destroy
     @topic = Topic.find(params[:id])
+    @bookmark = Bookmark.find(params[:bookmark_id])
 
     if @topic.destroy
       flash[:notice] = "\"#{@topic.title}\"topic was deleted."
