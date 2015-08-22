@@ -41,8 +41,7 @@ class TopicsController < ApplicationController
 
   def destroy
     @topic = Topic.find(params[:id])
-    @bookmark = Bookmark.find(params[:bookmark_id])
-
+    
     if @topic.destroy
       flash[:notice] = "\"#{@topic.title}\"topic was deleted."
       redirect_to topics_path
