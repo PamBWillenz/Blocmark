@@ -1,7 +1,7 @@
 class BookmarksController < ApplicationController
   def show
     @topic = Topic.find(params[:topic_id])
-    @bookmark = @topic.bookmarks.find_by(params[:id])
+    @bookmark = @topic.bookmark.find(params[:id])
     @bookmarks = @topic.bookmarks
   end
 
@@ -43,8 +43,8 @@ class BookmarksController < ApplicationController
 
   def destroy
     @topic = Topic.find(params[:topic_id])
-    @bookmark = @topic.bookmarks.find(params[:id])
-    if bookmark.destroy
+    @bookmark = Bookmark.find(params[:id])
+    if @bookmark.destroy
       flash[:notice] = "Bookmark was deleted."
       redirect_to topics_path
     else
