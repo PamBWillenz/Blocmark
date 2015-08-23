@@ -8,14 +8,14 @@
     <br>
 <div class="row">
   <div class="col-md-8">
-    <% @bookmarks.each do |bookmark| %>
+    <% @bookmark.each do |bookmark| %>
       <div class="media">
         <div class="media-body">
           <h2 class="media-heading">
             <%= link_to bookmark.url, bookmark.url, :target => '_blank' %>
             <%= link_to "New Bookmark", new_topic_bookmark_path(@topic), class: 'btn btn-primary' %>
-            <%= link_to "Edit Bookmark", edit_topic_bookmark_path(@bookmark, bookmark), class: 'btn btn-primary' %>
-            <%= link_to "Delete Bookmark", [@topic, @bookmark], method: :delete, class: 'btn btn-danger' %>
+            <%#= link_to "Edit Bookmark", edit_topic_bookmark_path(bookmark.topic, bookmark), class: 'btn btn-primary' %>
+            <%= link_to "Delete Bookmark", [bookmark.topic, bookmark], method: :delete, class: 'btn btn-danger' %>
           </h2>
         </div>
       </div>
