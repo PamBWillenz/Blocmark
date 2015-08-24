@@ -3,7 +3,7 @@ class BookmarksController < ApplicationController
     @topic = Topic.find(params[:topic_id])
     @bookmark = Bookmark.find(params[:id])
     # @bookmark = @topic.bookmark.find(params[:id])
-    # @bookmarks = @topic.bookmarks
+    @bookmarks = @topic.bookmarks
   end
 
   def new
