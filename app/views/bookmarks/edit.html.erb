@@ -2,7 +2,7 @@
 
 <div class="row">
   <div class='col-md-8'>
-    <%= form_for [@topic, @bookmark], url: edit_topic_bookmark_path  do |f| %>
+    <%= form_for [@topic, @bookmark], do |f| %>
       <div class="form-group">
         <%= f.label :url %>
         <%= f.text_field :url, class: 'form-control', placeholder: "Enter url" %>
