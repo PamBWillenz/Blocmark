@@ -6,7 +6,7 @@
       <div class="media-body">
         <h4 class="media-heading">
           <p><%= link_to topic.title, topic %></p>
-          <%= link_to "Delete Topic", topic, method: :delete, class: 'btn btn-danger' %> 
+          <%= link_to "Delete Topic", topic, method: :delete, class: 'btn btn-danger' %>
             <br>
             <br>
             <% topic.bookmarks.each do |bookmark| %>
