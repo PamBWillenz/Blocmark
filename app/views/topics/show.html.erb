@@ -22,6 +22,7 @@
             <%= link_to "Edit Bookmark", edit_topic_bookmark_path(@topic, bookmark), class: 'btn btn-success' %>
             <% end %>
           </h2>
+            <%= render partial: 'likes/like', locals: { bookmark: bookmark } %>
         </div>
       </div>
     <% end %>
