@@ -5,7 +5,7 @@
     <div class="col-md-8">
       <% @user_bookmarks.each do |bookmark| %>
         <h3 class="media-heading">
-          <h2><%= bookmark.topic.title %></h2>
+          <h2><%= "#{bookmark.topic.title}" %></h2>
           <br>
           <h3><%= link_to bookmark.url, bookmark.url, :target => '_blank' %></h3>
           <% link_to "Delete", [bookmark.topic, bookmark], method: :delete, class: 'btn btn-danger' %>
@@ -21,7 +21,7 @@
       <div class="col-md-8">
         <% @liked_bookmarks.each do |bookmark| %>
           <h3 class="media-heading">
-            <%= "##{bookmark.topic.title}" %>
+            <%= "#{bookmark.topic.title}" %>
             <br>
             <%= link_to bookmark.url, bookmark.url, :target => '-blank' %>
             <%= render partial: 'likes/like', locals: { bookmark: bookmark } %>

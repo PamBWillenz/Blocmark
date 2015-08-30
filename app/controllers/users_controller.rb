@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!, except: [:show]
+  before_action :authenticate_user!
 
-  def show
+    def show
     @user = current_user
     @user_bookmarks = @user.bookmarks
     @liked_bookmarks = @user.liked_bookmarks
