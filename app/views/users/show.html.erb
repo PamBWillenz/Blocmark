@@ -1,0 +1,34 @@
+<h1>User's Profile</h1>
+<br>
+<div class="row">
+  <h2>Your Bookmarks:</h2>
+    <div class="col-md-8">
+      <% @user_bookmarks.each do |bookmark| %>
+        <h3 class="media-heading">
+          <h2><%= "#{bookmark.topic.title}" %></h2>
+          <br>
+          <h3><%= link_to bookmark.url, bookmark.url, :target => '_blank' %></h3>
+          <% link_to "Delete", [bookmark.topic, bookmark], method: :delete, class: 'btn btn-danger' %>
+           <%= render partial: 'likes/like', locals: { bookmark: bookmark } %>
+          <br>
+        </h3>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row">
+    <h2>Liked Bookmarks:</h2>
+      <div class="col-md-8">
+        <% @liked_bookmarks.each do |bookmark| %>
+          <h3 class="media-heading">
+            <%= "#{bookmark.topic.title}" %>
+            <br>
+            <%= link_to bookmark.url, bookmark.url, :target => '-blank' %>
+            <%= render partial: 'likes/like', locals: { bookmark: bookmark } %>
+            <br>
+          </h3>
+        <% end %>
+      </div>
+      
+
+

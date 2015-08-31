@@ -15,4 +15,12 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) << :name
   end
+
+  def authenicate_user!
+    if user_signed_in?
+      flash[:sucess] = "Welcome to Blockmarks!"
+    else 
+      redirect_to new_user_registration_path
+    end
+  end
 end
