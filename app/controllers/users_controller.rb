@@ -3,8 +3,13 @@ class UsersController < ApplicationController
 
     def show
     @user = current_user
-    @user_bookmarks = @user.bookmarks
-    @liked_bookmarks = @user.liked_bookmarks
+    # @user = User.find(params[:id])
+    # if @user.id == current_user.id
+      @user_bookmarks = @user.bookmarks
+      @liked_bookmarks = @user.liked_bookmarks
+    # else
+      # redirect_to root_url, notice: 'sorry'
+    # end
   end
 
   def update
