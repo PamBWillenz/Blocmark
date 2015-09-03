@@ -1,8 +1,10 @@
 <div class="text-center">
   <h1><%= @topic.title %></h1>
-    <% if policy(@topic).edit? %><%= link_to "Edit", edit_topic_path(@topic), class: 'btn btn-success' %>
+    <% if policy(@topic).edit? %>
+    <%= link_to "Edit", edit_topic_path(@topic), class: 'btn btn-success' %>
     <% end %>
-    <% if policy(@topic).destroy? %><%= link_to "Delete Topic", @topics, method: :delete, class: 'btn btn-danger' %>
+    <% if policy(@topic).destroy? %>
+    <%= link_to "Delete Topic", @topics, method: :delete, class: 'btn btn-danger' %>
     <% end %>
 </div>
 <% if policy(@bookmark).create? %>
