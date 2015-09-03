@@ -1,5 +1,6 @@
 <div class="panel panel-default">
-  <div class="panel-heading"><h1>All Topics <%= link_to "New Topic", new_topic_path, class: 'btn btn-success' %></h1> 
+  <div class="panel-heading"><h1>All Topics <% if policy(Topic.new).create? %><%= link_to "New Topic", new_topic_path, class: 'btn btn-success' %></h1> 
+  <% end %>
   </div>
   <div class="panel-body">
 
@@ -12,7 +13,8 @@
               <div class="media-body">
                 <h4 class="media-heading">
                   <p><%= link_to topic.title, topic %></p>
-                  <%= link_to "Delete Topic", topic, method: :delete, class: 'btn btn-danger' %>
+                  <% if policy(topic).destroy? %><%= link_to "Delete Topic", topic, method: :delete, class: 'btn btn-danger' %>
+                  <% end %>
                   <br>
                   <br>
                   <% topic.bookmarks.each do |bookmark| %>
