@@ -13,7 +13,9 @@
       <li><%= link_to "Blocmark", root_path %></li>
       <li><%= link_to "About", about_path %></li>
       <li><%= link_to "Topics", topics_path %></li>
-      <li><%= link_to "Your Bookmarks", users_show_path %></li>
+      <% if current_user %>
+      <li><%= link_to "Your Bookmarks", user_path(current_user) %></li>
+      <% end %>
 
       <div class="pull-right user-info">
         <% if current_user %>
