@@ -3,14 +3,14 @@ class TopicsController < ApplicationController
 
   def index
     @topics = Topic.all
-    authorize @topics
+    # authorize @topics
   end
 
   def show
     @topic = Topic.find(params[:id])
     @bookmarks = @topic.bookmarks
     @bookmark = Bookmark.new
-    authorize @topic
+    # authorize @topic
    
   end
 
