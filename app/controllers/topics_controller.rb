@@ -20,7 +20,8 @@ class TopicsController < ApplicationController
   end
 
   def create
-    @topic = Topic.new(topic_params)
+    @topic = current_user.topics.build(topic_params)
+    # @topic = Topic.new(topic_params)
     authorize @topic
     if @topic.save
       flash[:notice] = "Topic was saved."
