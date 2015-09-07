@@ -12,14 +12,14 @@
             <div class="media">
               <div class="media-body">
                 <h4 class="media-heading">
-                  <p><%= link_to topic.title, topic %></p>
+                  <h4><%= link_to topic.title, topic %></h4>
                   <% if policy(topic).destroy? %>
                   <%= link_to "Delete Topic", topic, method: :delete, class: 'btn btn-danger' %>
                   <% end %>
                   <br>
                   <br>
                   <% topic.bookmarks.each do |bookmark| %>
-                    <p><%= link_to bookmark.url, bookmark.url, :target => '_blank' %></p>
+                    <h4><%= link_to bookmark.url, bookmark.url, :target => '_blank' %></h4>
                   <% end %>
                 </h4>
               </div>
