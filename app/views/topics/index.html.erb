@@ -16,7 +16,15 @@
                   <br>
                   <br>
                   <% topic.bookmarks.each do |bookmark| %>
-                    <p><%= link_to bookmark.url, bookmark.url, :target => '_blank' %></p>
+                    <div class="thumbnail">
+                      <img src="" alt="...">
+
+                  <%= display(bookmark.url) %><br/>
+                  <%#= link_to bookmark.url.html_safe, bookmark.url.html_safe %><br/>
+                  <%= image_tag(display(bookmark.url).thumbnail_url).html_safe %><br/>
+
+                    <!-- <p><%= link_to bookmark.url, bookmark.url, :target => '_blank' %></p> -->
+                  </div>
                   <% end %>
                 </h4>
               </div>
