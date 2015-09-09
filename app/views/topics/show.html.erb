@@ -19,6 +19,16 @@
       <div class="media">
         <div class="media-body">
           <h2 class="media-heading">
+
+            <div class="thumbnail">
+              <img src="" alt="...">
+                <% embedly = display(bookmark.url) %>
+                <%= link_to embedly[:url], :target => '_blank' do %>
+                  <%= image_tag embedly[:thumbnail_url] %>
+                <% end %>
+            </div>
+                  
+
             <%= link_to bookmark.url, bookmark.url, :target => '_blank' %>
             <% if policy(bookmark).destroy? %>
             <%= link_to "Delete Bookmark", [bookmark.topic, bookmark], method: :delete, class: 'btn btn-danger' %>

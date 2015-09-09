@@ -22,16 +22,11 @@
                     <div class="thumbnail">
                       <img src="" alt="...">
 
-                  <% embedly = display(bookmark.url) %><br/>
-                  <%#= link_to bookmark.url.html_safe, bookmark.url.html_safe %><br/>
-                  <%#= image_tag(display(bookmark.url).thumbnail_url).html_safe %>
-                  <%= link_to embedly[:url] do %>
-                    <%= image_tag embedly[:thumbnail_url] %>
-                  <% end %>
-                  <br/>
-
-                    <!-- <p><%= link_to bookmark.url, bookmark.url, :target => '_blank' %></p> -->
-                  </div>
+                      <% embedly = display(bookmark.url) %>
+                      <%= link_to embedly[:url], :target => '_blank' do %>
+                        <%= image_tag embedly[:thumbnail_url] %>
+                      <% end %>
+                   </div>
                   <% end %>
                 </h4>
               </div>
