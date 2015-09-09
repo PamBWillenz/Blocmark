@@ -1,6 +1,6 @@
 class BookmarksController < ApplicationController
   # before_action :authenticate_user!
-
+  
   def show
     @topic = Topic.find(params[:topic_id])
     @bookmark = Bookmark.find(params[:id])

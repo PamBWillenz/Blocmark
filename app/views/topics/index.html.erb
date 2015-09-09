@@ -19,7 +19,14 @@
                   <br>
                   <br>
                   <% topic.bookmarks.each do |bookmark| %>
-                    <h4><%= link_to bookmark.url, bookmark.url, :target => '_blank' %></h4>
+                    <div class="thumbnail">
+                      <img src="" alt="...">
+
+                      <% embedly = display(bookmark.url) %>
+                      <%= link_to embedly[:url], :target => '_blank' do %>
+                        <%= image_tag embedly[:thumbnail_url] %>
+                      <% end %>
+                   </div>
                   <% end %>
                 </h4>
               </div>

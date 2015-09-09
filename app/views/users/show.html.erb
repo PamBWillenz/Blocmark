@@ -10,7 +10,16 @@
       <div class="col-md-4">
         <h3 class="media-heading">
           <h2><%= "#{bookmark.topic.title}" %></h2>
-        
+
+
+          <div class="thumbnail">
+            <img src="" alt="...">
+              <% embedly = display(bookmark.url) %>
+                <%= link_to embedly[:url], :target => '_blank' do %>
+                 <%= image_tag embedly[:thumbnail_url] %>
+                <% end %>
+          </div>
+                        
           <p><%= link_to bookmark.url, bookmark.url, :target => '_blank' %></p>
           <% link_to "Delete", [bookmark.topic, bookmark], method: :delete, class: 'btn btn-danger' %>
            <%= render partial: 'likes/like', locals: { bookmark: bookmark } %>
@@ -27,6 +36,15 @@
           <h3 class="media-heading">
             <h2><%= "#{bookmark.topic.title}" %></h2>
             <br>
+
+        <div class="thumbnail">
+          <img src="" alt="...">
+            <% embedly = display(bookmark.url) %>
+              <%= link_to embedly[:url], :target => '_blank' do %>
+                <%= image_tag embedly[:thumbnail_url] %>
+              <% end %>
+        </div>
+               
             <p><%= link_to bookmark.url, bookmark.url, :target => '-blank' %></p>
             <%= render partial: 'likes/like', locals: { bookmark: bookmark } %>
             <br>

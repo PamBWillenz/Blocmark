@@ -9,7 +9,6 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
-
 class Bookmark < ActiveRecord::Base
   belongs_to :topic
   belongs_to :user
