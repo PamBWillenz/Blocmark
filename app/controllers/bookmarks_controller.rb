@@ -1,7 +1,6 @@
 class BookmarksController < ApplicationController
   # before_action :authenticate_user!
-  require 'embedly'
-
+  
   def show
     @topic = Topic.find(params[:topic_id])
     @bookmark = Bookmark.find(params[:id])

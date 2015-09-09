@@ -1,6 +1,5 @@
 class TopicsController < ApplicationController
-  require 'embedly'
-  
+    
   def index
     @topics = Topic.all
   end
