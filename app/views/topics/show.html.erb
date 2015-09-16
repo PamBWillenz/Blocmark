@@ -14,14 +14,13 @@
     <br>
     <br>
 <div class="row">
-  <div class="col-md-8">
+  <div class="col-md-6">
     <% @bookmarks.each do |bookmark| %>
       <div class="media">
         <div class="media-body">
           <h2 class="media-heading">
 
             <div class="thumbnail">
-              <img src="" alt="...">
                 <% embedly = display(bookmark.url) %>
                 <%= link_to embedly[:url], :target => '_blank' do %>
                   <%= image_tag embedly[:thumbnail_url] %>

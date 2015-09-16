@@ -20,7 +20,6 @@
                   <br>
                   <% topic.bookmarks.each do |bookmark| %>
                     <div class="thumbnail">
-                      <img src="" alt="...">
                       <%= link_to bookmark.url, bookmark.url, :target => '_blank' %>
 
                       <% embedly = display(bookmark.url) %>
